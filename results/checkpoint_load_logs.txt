@@ -1,0 +1,8 @@
+# Checkpoint-loading lines from the original run logs (local paths removed).
+reclmis_qata.log    : checkpoint: 0 missing, 0 unexpected keys      (audit/reclmis_shuffle.py, RecLMIS QaTa-COV19)
+reclmis_mosmed.log  : checkpoint: 0 missing, 0 unexpected keys      (audit/reclmis_shuffle.py, RecLMIS MosMedData+)
+tb_agree.log        : missing 0 unexpected 0                        (audit/tb_agree.py, TextBraTS)
+textbrats_kt.log    : no checkpoint line - the study version of shuffle_test.py printed key counts only when non-zero
+ariadne_cf (QaTa)   : <All keys matched successfully>               (load_state_dict(strict=True), Ariadne's Thread)
+ariadne_cf (MosMed) : loaded with strict=True (a mismatch raises an error; the run completed)
+reclmis_slots runs  : assert on missing keys passed; same checkpoints as reclmis_shuffle (0 unexpected)

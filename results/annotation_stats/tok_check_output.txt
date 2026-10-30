@@ -1,0 +1,22 @@
+# Output of analysis/tok_check.py (paraphrase rules as in audit/para.py; CLIP part run in the main env, CXR-BERT part in the ariadne env)
+QaTa   RecLMIS/CLIP (limit 18)      orig >18: 24.6% | para >18: 24.6% | newly truncated  0.0% | max len 22->22
+QaTa   Ariadne/CXR-BERT (limit 24)  orig >24:  0.0% | para >24:  0.0% | newly truncated  0.0% | max len 22->21
+MosMed RecLMIS/CLIP (limit 18)      orig >18:  0.0% | para >18:  0.0% | newly truncated  0.0% | max len 18->18
+MosMed Ariadne/CXR-BERT (limit 24)  orig >24:  0.0% | para >24:  0.0% | newly truncated  0.0% | max len 19->18
+
+# Per-rule check with the FIRST opening rewrite ("Infection of both lungs"), RecLMIS/CLIP on QaTa
+original: CLIP tokens median 18, max 22, >18: 24.6%
+rule 0   : changed 1675 | >18 tokens orig 30.3% -> para 98.7% | mean len 18.4 -> 19.4
+rule 1   : changed  438 | >18 tokens orig 3.0% -> para 3.0% | mean len 15.3 -> 15.3
+rule 2   : changed 1751 | >18 tokens orig 29.5% -> para 29.6% | mean len 18.3 -> 18.4
+rule 3   : changed  361 | >18 tokens orig 0.8% -> para 1.9% | mean len 15.2 -> 17.8
+rule 4   : changed  936 | >18 tokens orig 15.6% -> para 15.6% | mean len 18.1 -> 18.1
+rule 5   : changed 1417 | >18 tokens orig 35.9% -> para 35.9% | mean len 17.7 -> 17.7
+all rules: changed 2113 | >18 tokens orig 24.6% -> para 78.9% | mean len 17.8 -> 18.6
+
+# Candidate search in audit/para_lenmatch.py (token-count change per report)
+'Bilateral lung infection'          token delta: min 0, max 0, nonzero 0.0%   <- chosen
+'Both lungs infected'               token delta: min 0, max 0, nonzero 0.0%
+'Infection both lungs'              token delta: min 0, max 0, nonzero 0.0%
+'Pulmonary infection, bilateral'    token delta: min 1, max 1, nonzero 100.0%
+full truncation-controlled paraphrase: token delta min -3 max 3, reports pushed past 18: 0.0%

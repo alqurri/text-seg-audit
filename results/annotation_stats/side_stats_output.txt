@@ -1,0 +1,34 @@
+# Output of analysis/side_stats.py (LViT annotations; QaTa masks from QaTa-COV19-v2, MosMed masks from the single-channel copies)
+
+== QaTa train+val: n=7145 | {'both': 5508, 'right-only': 912, 'left-only': 718, 'no side word': 7} | {'Bilateral': 5663, 'Unilateral': 1482}
+   top location combos: [('lower left + lower right', 2237), ('all left + all right', 1985), ('lower right', 691), ('all left + lower right', 518), ('lower left', 497), ('all right + lower left', 196)]
+   'left-only' reports with mask: n=718, mask mostly on IMAGE-left in 96%
+   'right-only' reports with mask: n=912, mask mostly on IMAGE-left in 16%
+
+== QaTa test: n=2113 | {'both': 1663, 'left-only': 240, 'right-only': 209, 'no side word': 1} | {'Bilateral': 1675, 'Unilateral': 438}
+   top location combos: [('all left + all right', 648), ('lower left + lower right', 481), ('lower right', 164), ('all left + lower right', 120), ('lower left', 116), ('middle left + middle right', 90)]
+   'left-only' reports with mask: n=240, mask mostly on IMAGE-left in 96%
+   'right-only' reports with mask: n=209, mask mostly on IMAGE-left in 4%
+
+== MosMed train: n=2183 | {'both': 1467, 'left-only': 673, 'no side word': 43} | {'Bilateral': 1061, 'Unilateral': 1079, 'neither': 43}
+   top location combos: [('middle left + middle right', 543), ('middle left', 435), ('middle right', 328), ('upper left', 208), ('upper left + upper right', 178), ('middle right + upper left', 114)]
+   'left-only' reports with mask: n=673, mask mostly on IMAGE-left in 100%
+
+== MosMed val: n=273 | {'left-only': 141, 'both': 128, 'no side word': 4} | {'Unilateral': 155, 'Bilateral': 114, 'neither': 4}
+   top location combos: [('middle left', 93), ('upper left', 47), ('middle right + upper left', 39), ('middle left + middle right', 35), ('lower right + middle left', 12), ('upper left + upper right', 11)]
+   'left-only' reports with mask: n=141, mask mostly on IMAGE-left in 100%
+
+== MosMed test: n=273 | {'both': 204, 'left-only': 69} | {'Bilateral': 167, 'Unilateral': 106}
+   top location combos: [('middle left + middle right', 81), ('middle left', 43), ('middle right', 36), ('upper left + upper right', 31), ('middle right + upper left', 28), ('upper left', 21)]
+   'left-only' reports with mask: n=69, mask mostly on IMAGE-left in 100%
+
+# Laterality word x side words (MosMed), with an example of each pattern
+== MosMed train
+  ('Bilateral', 'left+right'): 1061   e.g. 'Bilateral pulmonary infection, two infected areas, all left lung and middle right lung.'
+  ('Unilateral', 'left'): 673         e.g. 'Unilateral pulmonary infection, one infected areas, middle left lung.'
+  ('Unilateral', 'left+right'): 406   e.g. 'Unilateral pulmonary infection, two infected areas, left lung and middle right lung.'
+  ('neither', '-'): 43                e.g. 'No pulmonary infection, zero infected areas.'
+== MosMed test
+  ('Bilateral', 'left+right'): 167    e.g. 'Bilateral pulmonary infection, nine infected areas, all left lung and all right lung..'
+  ('Unilateral', 'left'): 69          e.g. 'Unilateral pulmonary infection, seven infected areas, middle left lung.'
+  ('Unilateral', 'left+right'): 37    e.g. 'Unilateral pulmonary infection, two infected areas, left lung and middle right lung.'

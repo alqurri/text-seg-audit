@@ -1,0 +1,117 @@
+{
+  "n_scans": 200,
+  "n_findings_eligible": 177,
+  "n_excluded": 3,
+  "excluded_reasons": {
+    "text_mask_side_mismatch": 2,
+    "outside_thorax": 1
+  },
+  "n_scored": 174,
+  "n_hit": 126,
+  "hit_rate_orig": 0.7241379310344828,
+  "dice_orig_mean": 0.29992419757410105,
+  "gate_lung_control_pass_rate": 0.995,
+  "gate_alignment_median_in_roi": 1.0,
+  "SFR": 0.007936507936507936,
+  "SFR_CI95": [
+    0.0,
+    0.02586206896551724
+  ],
+  "stale_rel_median": 0.0,
+  "stale_rel_median_CI95": [
+    0.0,
+    0.0
+  ],
+  "swap_suppressed_rate": 0.4523809523809524,
+  "swap_correct_side_mean_(non-empty)": 0.9454699824373659,
+  "dice_swap_vs_cf_mean_(cf exists)": 0.17229748823518362,
+  "strip_hit_rate_(among orig hits)": 0.7528089887640449,
+  "by_side": {
+    "left": [
+      0.0,
+      58
+    ],
+    "right": [
+      0.014705882352941176,
+      68
+    ]
+  },
+  "by_swap_kind": {
+    "side_word_only": [
+      0.0,
+      89
+    ],
+    "anatomy_word": [
+      0.02702702702702703,
+      37
+    ]
+  },
+  "by_has_lobe": {
+    "True": [
+      0.008547008547008548,
+      117
+    ],
+    "False": [
+      0.0,
+      9
+    ]
+  },
+  "by_category": {
+    "1b": [
+      0.0,
+      4
+    ],
+    "1c": [
+      0.0,
+      1
+    ],
+    "1e": [
+      0.0,
+      1
+    ],
+    "2a": [
+      0.0,
+      26
+    ],
+    "2b": [
+      0.0,
+      26
+    ],
+    "2c": [
+      0.0,
+      21
+    ],
+    "2d": [
+      0.023255813953488372,
+      43
+    ],
+    "2e": [
+      0.0,
+      4
+    ]
+  },
+  "verdict": "FOLLOWS_LATERALITY: swapped prompts rarely keep the original lesion",
+  "cos_swap_median": 0.9271977245807648,
+  "spearman_cos_swap_vs_stale": [
+    -0.09333687830584819,
+    0.29855668444467265
+  ],
+  "missing_scans": [],
+  "config": {
+    "hit": 0.1,
+    "stale": 0.5,
+    "suppress": 0.1,
+    "consistent": 0.8,
+    "in_roi": 0.8,
+    "ctrl_side": 0.9,
+    "ctrl_dice": 0.7,
+    "gate_ctrl": 0.95,
+    "gate_align": 0.85,
+    "follow_point": 0.1,
+    "follow_upper": 0.15,
+    "ignore_point": 0.3,
+    "min_hits": 40,
+    "n_boot": 2000,
+    "seed": 0
+  }
+}

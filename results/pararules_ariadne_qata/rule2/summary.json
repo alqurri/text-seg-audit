@@ -1,0 +1,23 @@
+{
+ "n": 2113,
+ "constant_report": "n/a",
+ "dice": {
+  "matched": 84.2536707757256,
+  "slot_para": 82.2609838077021,
+  "shuffled_mean": NaN
+ },
+ "delta": {
+  "slot_para": {
+   "n": 1751,
+   "mean": 2.4046530916240134,
+   "lo": 2.118604944828474,
+   "hi": 2.6977503623521923
+  },
+  "shuffled_mean": {
+   "n": 2113,
+   "mean": NaN,
+   "lo": NaN,
+   "hi": NaN
+  }
+ }
+}

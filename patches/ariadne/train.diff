@@ -1,0 +1,15 @@
+diff --git a/train.py b/train.py
+index d71c750..078f118 100644
+--- a/train.py
++++ b/train.py
+@@ -48,8 +48,8 @@ if __name__ == '__main__':
+                     mode='valid')
+ 
+ 
+-    dl_train = DataLoader(ds_train, batch_size=args.train_batch_size, shuffle=True, num_workers=args.train_batch_size)
+-    dl_valid = DataLoader(ds_valid, batch_size=args.valid_batch_size, shuffle=False, num_workers=args.valid_batch_size)
++    dl_train = DataLoader(ds_train, batch_size=args.train_batch_size, shuffle=True, num_workers=8)
++    dl_valid = DataLoader(ds_valid, batch_size=args.valid_batch_size, shuffle=False, num_workers=8)
+ 
+     model = LanGuideMedSegWrapper(args)
+ 

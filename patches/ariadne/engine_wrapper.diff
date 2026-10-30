@@ -1,0 +1,29 @@
+--- a/engine/wrapper.py
++++ b/engine/wrapper.py
+@@ -13,6 +13,17 @@
+ 
+ class LanGuideMedSegWrapper(pl.LightningModule):
+ 
++    @property
++    def _cfg(self):
++        # PL>=1.x stores the config under its init-arg name; fall back to it when keys aren't flat
++        h = self.hparams
++        if "lr" in h:
++            return h
++        for v in h.values():
++            if hasattr(v, "lr") or (isinstance(v, dict) and "lr" in v):
++                return v
++        return h
++
+     def __init__(self, args):
+         
+         super(LanGuideMedSegWrapper, self).__init__()
+@@ -32,7 +43,7 @@
+ 
+     def configure_optimizers(self):
+ 
+-        optimizer = torch.optim.AdamW(self.model.parameters(),lr = self.hparams.lr)
++        optimizer = torch.optim.AdamW(self.model.parameters(),lr = self._cfg.lr)
+         lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max =200, eta_min=1e-6)
+ 
+         return {"optimizer":optimizer,"lr_scheduler":lr_scheduler}

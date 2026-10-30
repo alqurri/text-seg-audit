@@ -1,0 +1,7 @@
+# Third-party code and weights used for the paper's runs
+LanGuideMedSeg-MICCAI2023 (Ariadne's Thread)  git acfd134cf51067a145904d7031b631a6119dbc3f  https://github.com/Junelin2333/LanGuideMedSeg-MICCAI2023
+RecLMIS                                     git d3265c8b4d4582a94595fe1c8b1892c618bc9715  https://github.com/ShawnHuang497/RecLMIS
+VoxTell                                     pip voxtell==0.1.2; weights: Hugging Face mrokuss/VoxTell, snapshot 4e3afbac2a8e30b13c5d6e3a76002bff5571bf32 (default download, no --model-dir)
+TextBraTS                                   not a git clone: copy of the official TextBraTS code whose README is the Hugging Face model card
+                                            (associated dataset Jupitern52/TextBraTS); authors' checkpoint at runs/TextBraTS/model.pt
+                                            (sha256 of model.pt: see textbrats_checkpoint.sha256 if present)

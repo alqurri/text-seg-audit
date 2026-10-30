@@ -1,0 +1,7 @@
+{
+ "n": 2113,
+ "identical_masks": 2113,
+ "max_abs_output_diff": 0.0,
+ "seconds_two_passes": 44.22334289550781,
+ "seconds_per_pass": 22.111671447753906
+}
